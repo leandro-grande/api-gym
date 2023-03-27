@@ -1,0 +1,47 @@
+{
+  "name": "api-gym",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "start": "node build/server.js",
+    "build": "tsup src --out-dir build",
+    "test": "vitest run src/modules/*/useCases/*",
+    "test:e2e": "vitest run src/modules/*/controllers",
+    "test:e2e-watch": "vitest src/modules/*/controllers",
+    "pretest:e2e": "npm link ./prisma/vitest-environment-prisma && npm link vitest-environment-prisma",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "2.4.2",
+    "@types/cookie-parser": "1.4.3",
+    "@types/express": "4.17.17",
+    "@types/jsonwebtoken": "9.0.1",
+    "@types/supertest": "2.0.12",
+    "@typescript-eslint/eslint-plugin": "5.55.0",
+    "@typescript-eslint/parser": "5.55.0",
+    "@vitest/coverage-c8": "0.29.3",
+    "@vitest/ui": "0.29.3",
+    "prisma": "4.11.0",
+    "supertest": "6.3.3",
+    "tsup": "6.6.3",
+    "tsx": "3.12.5",
+    "typescript": "4.9.5",
+    "vite-tsconfig-paths": "4.0.7",
+    "vitest": "0.29.2"
+  },
+  "dependencies": {
+    "@prisma/client": "4.11.0",
+    "bcryptjs": "2.4.3",
+    "cookie-parser": "1.4.6",
+    "dayjs": "1.11.7",
+    "dotenv": "16.0.3",
+    "eslint": "8.36.0",
+    "express": "4.18.2",
+    "express-async-errors": "3.1.1",
+    "jsonwebtoken": "9.0.0",
+    "zod": "3.21.4"
+  }
+}
